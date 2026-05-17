@@ -235,9 +235,7 @@ void loop() {
 
   // Для выключения через 5 секунд
   
-  if (ledcwr && sirenStart == 0) {
-    sirenStart = millis();
-  }
+
   if (sirenStart > 0 && millis() - sirenStart >= 1000) {
     ledcWriteTone(0, 0);       // выключаем звук
     sirenStart = 0;
